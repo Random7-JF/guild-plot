@@ -9,4 +9,5 @@ import (
 func Home(w http.ResponseWriter, r *http.Request) {
 	component := components.Home("Guild-Plot")
 	component.Render(r.Context(), w)
+
 }
