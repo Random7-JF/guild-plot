@@ -10,22 +10,32 @@ templ Base(title string) {
     <link rel="stylesheet" href="/static/css/style.css">
 </head>
 <body>
-    <header>
-        <nav>
-            <a href="/">Home</a>
-            <a href="/about">About</a>
-            <a href="/contact">Contact</a>
-        </nav>
-        <h1>Welcome!</h1>
+    <!-- ==================== HEADER ==================== -->
+    <header class="app-header">
+        <div class="banner">
+            <h1 class="site-title">Guild-Plot</h1>
+            <p class="tagline">View and choose housing plots</p>
+        </div>
     </header>
+
+    <!-- ==================== NAVIGATION BAR ==================== -->
+    <nav class="app-nav">
+        <ul>
+            <li><a href="/">Map View</a></li>
+            <li><a href="/dashboard">Dashboard</a></li>
+            <li><a href="/settings">Settings</a></li>
+            <li><a href="/help">Help</a></li>
+        </ul>
+    </nav>
     <main>
         { children... }
     </main>
-
-    <footer>
-        <p>&copy; 2025 All rights reserved.</p>
+    <footer class="app-footer">
+        <p>&copy; 2025 Guild-Plot. All rights reserved.</p>
+        <div class="footer-links">
+            <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
+        </div>
     </footer>
-
     <script src="/static/js/main.js"></script>
 </body>
 </html>
