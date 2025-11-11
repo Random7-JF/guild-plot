@@ -4,15 +4,19 @@ import (
 	"log"
 	"net/http"
 
+	"github.com/Random7-JF/guild-plot/config"
 	"github.com/Random7-JF/guild-plot/handlers"
 	"github.com/gorilla/mux"
 )
 
 func main() {
 
+	var AppConfig config.App
+
 	r := mux.NewRouter()
 	r.HandleFunc("/", handlers.Home).Methods("GET")
-	
+	r.HandleFunc("/api/v1/plots", handlers.Plots).Methods("GET")
+
 	staticFileServer := http.FileServer(http.Dir("./static"))
 	r.PathPrefix("/static/").Handler(http.StripPrefix("/static/", staticFileServer))
 

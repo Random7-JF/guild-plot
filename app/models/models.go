@@ -5,3 +5,9 @@ type HousePlot struct {
 	Occupied         bool
 	Owner            string
 }
+
+type Plot struct {
+	X          int `json:"x"`
+	Y          int `json:"y"`
+	PlotNumber int `json:"plotNumber"`
+}
