@@ -6,20 +6,27 @@ import "fmt"
 
 
 templ Plots(Houses []models.HousePlot) {
+	<script>
+	let plots = [];
+	</script>
+
 	for _, value := range Houses{
 		<div
 		    class={ "plot-symbol" }
 			style={ fmt.Sprintf("left: %dpx; top: %dpx;", value.X, value.Y) }
 			data-plot-id={ strconv.Itoa(value.PlotNumber) }
 		>
-			<!-- These paragraphs are mainly for debugging/info, you might remove them in final UI -->
-			<p>Plot: { strconv.Itoa(value.PlotNumber) }</p>
-			<p>Coords: { strconv.Itoa(value.X) }, { strconv.Itoa(value.Y) }</p>
-			<p>Occupied: { strconv.FormatBool(value.Occupied) }</p>
 			<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24">
 			  <line x1="6" y1="6" x2="18" y2="18" stroke-linecap="round" />
 			  <line x1="18" y1="6" x2="6" y2="18" stroke-linecap="round" />
 			</svg>
 		</div>
+		<script>
+			plots.push({
+				PlotNumber: {{ strconv.Itoa(value.PlotNumber) }},
+				X: {{ strconv.Itoa(value.X) }},
+				Y: {{strconv.Itoa(value.Y) }},
+				});
+		</script>
 	}
 }

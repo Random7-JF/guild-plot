@@ -50,7 +50,7 @@ func Base(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</main><footer class=\"app-footer\"><p>&copy; 2025 Guild-Plot. All rights reserved.</p><div class=\"footer-links\"><a href=\"/privacy\">Privacy Policy</a> | <a href=\"/terms\">Terms of Service</a></div></footer><script src=\"/static/js/main.js\"></script></body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</main><footer class=\"app-footer\"><p>&copy; 2025 Guild-Plot. All rights reserved.</p><div class=\"footer-links\"><a href=\"/privacy\">Privacy Policy</a> | <a href=\"/terms\">Terms of Service</a></div></footer><!--<script src=\"/static/js/main.js\"></script>--></body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

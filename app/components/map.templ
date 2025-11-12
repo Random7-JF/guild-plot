@@ -1,9 +1,15 @@
 package components
 
+import "github.com/Random7-JF/guild-plot/models"
+
 templ Map() {
 	<div class="map-container">
 	 <div class="map-background" id="mapBackground">
 	 <!-- House plots will be dynamically positioned here -->
+	 @Plots([]models.HousePlot{
+		{X:1,Y:2,PlotNumber: 1},
+		{X:31,Y:42,PlotNumber: 2},
+		{X:42,Y:22,PlotNumber: 3}})
 	 </div>
 	</div>
 }

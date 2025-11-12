@@ -4,14 +4,11 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Random7-JF/guild-plot/config"
 	"github.com/Random7-JF/guild-plot/handlers"
 	"github.com/gorilla/mux"
 )
 
 func main() {
-
-	var AppConfig config.App
 
 	r := mux.NewRouter()
 	r.HandleFunc("/", handlers.Home).Methods("GET")
@@ -25,4 +22,5 @@ func main() {
 	if err != nil {
 		log.Fatalf("Server failed to start: %v", err)
 	}
+
 }
