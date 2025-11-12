@@ -11,6 +11,7 @@ templ Plots(Houses []models.HousePlot) {
 	</script>
 
 	for _, value := range Houses{
+
 		<div
 		    class={ "plot-symbol" }
 			style={ fmt.Sprintf("left: %dpx; top: %dpx;", value.X, value.Y) }
