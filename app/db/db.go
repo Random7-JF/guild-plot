@@ -4,8 +4,8 @@ import "github.com/Random7-JF/guild-plot/models"
 
 func GetAllPlots() []models.HousePlot {
 	return []models.HousePlot{
-		{X: 2250, Y: 1250, PlotNumber: 0},
-		{X: 1635, Y: 1445, PlotNumber: 1},
+		{X: 2250, Y: 1250, PlotNumber: 0, Occupied: true, Owner: "Random"},
+		{X: 1635, Y: 1445, PlotNumber: 1, Occupied: true, Owner: "Kidd"},
 		{X: 1960, Y: 1550, PlotNumber: 2},
 		{X: 2430, Y: 1100, PlotNumber: 3},
 		{X: 1100, Y: 850, PlotNumber: 4},
@@ -15,8 +15,8 @@ func GetAllPlots() []models.HousePlot {
 		{X: 2055, Y: 1705, PlotNumber: 8},
 		{X: 1840, Y: 860, PlotNumber: 9},
 		{X: 1865, Y: 1645, PlotNumber: 10},
-		{X: 2020, Y: 1300, PlotNumber: 11},
-		{X: 985, Y: 1000, PlotNumber: 12},
+		{X: 2020, Y: 1300, PlotNumber: 11, Occupied: true, Owner: "Random"},
+		{X: 985, Y: 1000, PlotNumber: 12, Occupied: true, Owner: "Kidd"},
 		{X: 1430, Y: 1350, PlotNumber: 13},
 		{X: 1330, Y: 1400, PlotNumber: 14},
 		{X: 1960, Y: 1400, PlotNumber: 15},

@@ -6,8 +6,7 @@ templ Map() {
 	<div class="map-container">
 	 <div class="map-background" id="mapBackground">
 	 <!-- House plots will be dynamically positioned here -->
-	 <div plot-data={ templ.JSONString(db.GetAllPlots()) }></div>
-	 @Plots(db.GetAllPlots())
+	 	@Plots(db.GetAllPlots())
 	 </div>
 	</div>
 }

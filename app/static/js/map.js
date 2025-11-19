@@ -1,42 +1,51 @@
-let plotPositions = [];
-let mapImageData = {};
+function scaleSymbols() {
+  const plotSymbols = document.querySelectorAll('.plot-symbol');
+  console.log("Scaling")
+  console.log(plotSymbols)
+  if (plotSymbols.length === 0) return;
 
-async function loadPlotPositions() {
-  try {
-    const response = await fetch('/api/v1/plots');
-    const data = await response.json();
-    plotPositions = data.plotPositions;
-    mapImageData = data.referenceImage;
-    console.log('Plot positions loaded successfully:', data);
-  } catch (error) {
-    console.error('Error loading plot positions:', error);
-    // Fallback to empty array if JSON fails to load
-    plotPositions = [];
+  // Get the actual map image dimensions and position (same logic as grid)
+  const mapImage = new Image();
+  mapImage.onload = function () {
+    const mapRect = mapBackground.getBoundingClientRect();
+    const containerWidth = mapRect.width;
+    const containerHeight = mapRect.height;
+
+    // Calculate the actual displayed image dimensions (maintaining aspect ratio)
+    const imageAspectRatio = mapImage.width / mapImage.height;
+    const containerAspectRatio = containerWidth / containerHeight;
+
+    let imageWidth, imageHeight, offsetX, offsetY;
+
+    if (imageAspectRatio > containerAspectRatio) {
+      // Image is wider than container
+      imageWidth = containerWidth;
+      imageHeight = containerWidth / imageAspectRatio;
+      offsetX = 0;
+      offsetY = (containerHeight - imageHeight) / 2;
+    } else {
+      // Image is taller than container
+      imageHeight = containerHeight;
+      imageWidth = containerHeight * imageAspectRatio;
+      offsetX = (containerWidth - imageWidth) / 2;
+      offsetY = 0;
+    }
+
+    // Calculate scale factor from original image to displayed image
+    const scaleX = imageWidth / mapImage.width;
+    const scaleY = imageHeight / mapImage.height;
+
+    // Update plot positions using the same logic as grid
+    plotSymbols.forEach((plot, index) => {
+        const scaledX = offsetX + (originalPos.x * scaleX);
+        const scaledY = offsetY + (originalPos.y * scaleY);
+
+        plot.style.left = scaledX + 'px';
+        plot.style.top = scaledY + 'px';
+      })    
   }
 }
 
-// Initialize the map
-document.addEventListener('DOMContentLoaded', async function () {
-  // Load plot positions from JSON file first
-  await loadPlotPositions();
-
-  console.log(plotPositions)
-
-  // Create house plots after positions are loaded
-  //createHousePlots();
-
-  // Update positions on window resize
-  //let plotResizeTimeout;
-  //window.addEventListener('resize', function () {
-    // Clear existing timeout to prevent multiple rapid calls
-    //clearTimeout(plotResizeTimeout);
-    // Update immediately for responsiveness
-    //updatePlotPositions();
-  //});
-
-  // Initial position update
-  //setTimeout(updatePlotPositions, 100);
-
-  // Create initial grid overlay
-  //setTimeout(createGridOverlay, 500);
+document.addEventListener("DOMContentLoaded", () => {
+  scaleSymbols()
 });

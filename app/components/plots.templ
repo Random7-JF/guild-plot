@@ -6,12 +6,7 @@ import "fmt"
 
 
 templ Plots(Houses []models.HousePlot) {
-	<script>
-	let plots = [];
-	</script>
-
 	for _, value := range Houses{
-
 		<div
 		    class={ "plot-symbol" }
 			style={ fmt.Sprintf("left: %dpx; top: %dpx;", value.X, value.Y) }
@@ -19,12 +14,6 @@ templ Plots(Houses []models.HousePlot) {
 		>
 			<img src="/static/img/house.svg" width="24" height="24"/>
 		</div>
-		<script>
-			plots.push({
-				PlotNumber: {{ strconv.Itoa(value.PlotNumber) }},
-				X: {{ strconv.Itoa(value.X) }},
-				Y: {{strconv.Itoa(value.Y) }},
-				});
-		</script>
 	}
+	<script src="/static/js/map.js"></script>
 }

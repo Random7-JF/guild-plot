@@ -7,7 +7,7 @@ import (
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {
-	component := components.Home("Guild-Plot")
+	component := components.Test()
 	component.Render(r.Context(), w)
 
 }
