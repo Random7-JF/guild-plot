@@ -42,7 +42,7 @@ func Base(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"stylesheet\" href=\"/static/css/style.css\"></head><body><header class=\"app-header\"><div class=\"banner\"><h1 class=\"site-title\">Guild-Plot</h1><p class=\"tagline\">View and choose housing plots</p></div></header><nav class=\"app-nav\"><ul><li><a href=\"/\">Map View</a></li><li><a href=\"/dashboard\">Dashboard</a></li><li><a href=\"/settings\">Settings</a></li><li><a href=\"/help\">Help</a></li></ul></nav><main>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 2, "</title><link rel=\"stylesheet\" href=\"/static/css/style.css\"><script src=\"https://d3js.org/d3.v7.min.js\"></script></head><body><header class=\"app-header\"><div class=\"banner\"><h1 class=\"site-title\">Guild-Plot</h1><p class=\"tagline\">View and choose housing plots</p></div></header><nav class=\"app-nav\"><ul><li><a href=\"/\">Map View</a></li><li><a href=\"/dashboard\">Dashboard</a></li><li><a href=\"/settings\">Settings</a></li><li><a href=\"/help\">Help</a></li></ul></nav><main>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
@@ -50,7 +50,7 @@ func Base(title string) templ.Component {
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
-		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</main><footer class=\"app-footer\"><p>&copy; 2025 Guild-Plot. All rights reserved.</p><div class=\"footer-links\"><a href=\"/privacy\">Privacy Policy</a> | <a href=\"/terms\">Terms of Service</a></div></footer></body></html>")
+		templ_7745c5c3_Err = templruntime.WriteString(templ_7745c5c3_Buffer, 3, "</main><footer class=\"app-footer\"><p>&copy; 2025 Guild-Plot. All rights reserved.</p><div class=\"footer-links\"><a href=\"/privacy\">Privacy Policy</a> | <a href=\"/terms\">Terms of Service</a></div></footer></body><script src=\"https://d3js.org/d3.v7.min.js\"></script><script src=\"/static/js/d3.js\"></script></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}
