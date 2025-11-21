@@ -4,7 +4,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Random7-JF/guild-plot/handlers"
+	"github.com/Random7-JF/guild-plot/app/handlers"
 	"github.com/gorilla/mux"
 )
 

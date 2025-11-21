@@ -3,7 +3,7 @@ package handlers
 import (
 	"net/http"
 
-	"github.com/Random7-JF/guild-plot/components"
+	"github.com/Random7-JF/guild-plot/app/components"
 )
 
 func Home(w http.ResponseWriter, r *http.Request) {

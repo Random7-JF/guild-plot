@@ -5,7 +5,7 @@ import (
 	"log"
 	"net/http"
 
-	"github.com/Random7-JF/guild-plot/db"
+	"github.com/Random7-JF/guild-plot/app/db"
 )
 
 func Plots(w http.ResponseWriter, r *http.Request) {

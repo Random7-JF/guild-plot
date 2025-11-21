@@ -1,6 +1,6 @@
 package db
 
-import "github.com/Random7-JF/guild-plot/models"
+import "github.com/Random7-JF/guild-plot/app/models"
 
 func GetAllPlots() []models.HousePlot {
 	return []models.HousePlot{
