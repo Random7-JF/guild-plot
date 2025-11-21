@@ -13,7 +13,7 @@ tasks:
   tailwind:
     desc: Watch Tailwind CSS changes
     cmds:
-      - "{{.TAILWIND_CMD}} -i ./app/assets/css/input.css -o ./app/static/css/style.css --watch"
+      - "{{.TAILWIND_CMD}} -i ./assets/css/input.css -o ./static/css/style.css --watch"
 
   dev:
     desc: Start development server with hot reload

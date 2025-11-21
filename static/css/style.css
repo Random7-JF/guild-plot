@@ -71,6 +71,21 @@
     --selection: oklch(0.92 0.004 286.32);
     --selection-foreground: oklch(0.21 0.006 285.885);
 }
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+/* Basic Reset & Body Styling */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f0f2f5; /* Light background */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Ensures footer sticks to bottom */
+}
 
 /* Header Styling */
 .app-header {
