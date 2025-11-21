@@ -1,0 +1,7 @@
+{
+  "componentsDir": "app/components",
+  "utilsDir": "app/utils",
+  "moduleName": "github.com/Random7-JF/guild-plot",
+  "jsDir": "app/assets/js",
+  "jsPublicPath": "app/static/js"
+}
