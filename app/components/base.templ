@@ -1,5 +1,9 @@
 package components
 
+import "github.com/Random7-JF/guild-plot/app/components/sidebar"
+import "github.com/Random7-JF/guild-plot/app/components/dialog"
+import "github.com/Random7-JF/guild-plot/app/components/popover"
+
 templ Base(title string) {
 <!DOCTYPE html>
 <html lang="en">
@@ -9,31 +13,16 @@ templ Base(title string) {
     <title>{title}</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <script src="https://d3js.org/d3.v7.min.js"></script>
+    @sidebar.Script()
+    @dialog.Script()
+    @popover.Script()
 </head>
 <body>
-    <header class="app-header">
-        <div class="banner">
-            <h1 class="site-title">Guild-Plot</h1>
-            <p class="tagline">View and choose housing plots</p>
-        </div>
-    </header>
-    <nav class="app-nav">
-        <ul>
-            <li><a href="/">Map View</a></li>
-            <li><a href="/dashboard">Dashboard</a></li>
-            <li><a href="/settings">Settings</a></li>
-            <li><a href="/help">Help</a></li>
-        </ul>
-    </nav>
-    <main>
-        { children... }
-    </main>
-    <footer class="app-footer">
-        <p>&copy; 2025 Guild-Plot. All rights reserved.</p>
-        <div class="footer-links">
-            <a href="/privacy">Privacy Policy</a> | <a href="/terms">Terms of Service</a>
-        </div>
-    </footer>
+		<div style="display: flex; min-height: 100vh;">
+			<main style="flex-grow: 1; padding: 20px;">
+				{ children... }
+			</main>
+		</div>
 </body>
  <script src="https://d3js.org/d3.v7.min.js"></script>
  <script src="/static/js/d3.js"></script>
